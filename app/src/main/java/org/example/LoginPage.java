@@ -1,23 +1,49 @@
-// Login Page
-class login {
+// loginpage class file
+class loginPage {
     private String username;
     private String password;
-    private Boolean isAuthenticated;
-    private Int loginAttempt;
+    private boolean isAuthenticated;
+    private int loginAttempts;
+    private final int MAX_ATTEMPTS = 3;    
 
-
-    // constructor
-    login(String username, String password){
+    // Constructor
+    public loginPage(String username, String password) {
         this.username = username;
         this.password = password;
         this.isAuthenticated = false;
-        this.loginAttempt = 0;
+        this.loginAttempts = 0;
     }
 
+    // Method to authenticate user
+    public boolean login() {
+        if (isLocked()) {
+            System.out.println("Account locked due to too many failed login attempts.");
+            return false;
+        }
 
+        if (isvalidCredentials(username, password)) {
+            isAuthenticated = true;
+            System.out.println("Login successful!");
+            return true;
+        } else {
+            loginAttempts++;
+            return false;
+        }
+    }
 
-}package org.example;
+    // Method to check if account is locked
+    private boolean isLocked() {
+        return loginAttempts >= MAX_ATTEMPTS;   
+    }
+    private boolean isvalidCredentials(String username, String password) {
+        // In a real application, this method would check the credentials against a database
+        return username.equals("admin") && password.equals("password");
+    }
 
-public class Login {
-    
+    private void logout() {
+        this.username = null;
+        this.password = null;
+        this.isAuthenticated = false;
+    }
+
 }
