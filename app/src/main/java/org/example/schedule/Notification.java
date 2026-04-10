@@ -15,7 +15,7 @@ public class Notification{
     }
 
     public void sendDonorConfirmation(){
-        System.out.println("You are scheduled to donate! \n" + appointment.toString());
+        System.out.println("You are scheduled to donate!\n" + appointment.toString());
     }
 
 

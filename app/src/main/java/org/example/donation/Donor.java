@@ -12,7 +12,7 @@ public class Donor extends User {
         this.donations = new Arraylist<>();
     }
 
-    public Donor(String firstName, String lastName,, String email, String password, int householdSize){
+    public Donor(String firstName, String lastName, String email, String password, int householdSize){
         super(firstName, lastName, email, password, householdSize);
         this.donations = new Arraylist<>();
     }
