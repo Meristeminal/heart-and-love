@@ -1,6 +1,6 @@
-package org.example.donation;
-import org.example.User;
-import org.example.schedule.Appointment;
+package donation;
+import login.User;
+import schedule.Appointment;
 
 public class Donation {
     private String itemName;
@@ -41,12 +41,11 @@ public class Donation {
         this.itemName = newItemName;
     }
 
-    /* potentially of use
-    public void printDetails(){
-        System.out.println(this);
+    @Override
+    public String toString(){
+        String result = "Donation Appointment:\nItem: " + itemName + "\nQuantity: " + quantity + "\nDonor: " + donor.getFirstName() + " " + donor.getLastName();
+        return result;
     }
-    PS - do we need a toString method?
-    */
 
 
 }

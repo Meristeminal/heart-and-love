@@ -1,5 +1,4 @@
-package org.example.schedule;
-
+package schedule;
 import java.util.HashMap;
 
 

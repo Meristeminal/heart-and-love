@@ -1,18 +1,15 @@
-package org.example.schedule;
+package schedule;
 import java.time.LocalDateTime;
-import java.util.List;
-
-import org.example.User;
 
 /**
  * Stores information about an appointment. 
  */
-class Appointment { 
+public class Appointment { 
     
     private final LocalDateTime dateTime; 
-    private final List<User> participants;
+    private final String participants;
 
-    public Appointment(LocalDateTime dateTime, List<User> participants) {
+    public Appointment(LocalDateTime dateTime, String participants, Schedule schedule) {
         this.dateTime = dateTime;
         this.participants = participants;
     }
@@ -25,7 +22,7 @@ class Appointment {
         return this.dateTime.toString();
     }
 
-    public List<User> getParticipants() {
+    public String getParticipants() {
         return participants;
     }
 
@@ -34,7 +31,7 @@ class Appointment {
     }
 
     public String toString(){
-        String result = "The appointment will occur at " + getId() + " and includes the following participants:\n" +  participants.toString();
+        String result = "The appointment will occur at " + getId() + " and includes the following participants:\n" +  participants;
         return result;
     
     }
