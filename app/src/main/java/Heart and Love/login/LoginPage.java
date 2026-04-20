@@ -1,13 +1,15 @@
+package login;
+
 // loginpage class file
-class loginPage {
+public class LoginPage {
     private String username;
     private String password;
     private boolean isAuthenticated;
     private int loginAttempts;
-    private final int MAX_ATTEMPTS = 3;    
+    private final int MAX_ATTEMPTS = 3;
 
     // Constructor
-    public loginPage(String username, String password) {
+    public LoginPage(String username, String password) {
         this.username = username;
         this.password = password;
         this.isAuthenticated = false;
@@ -23,7 +25,7 @@ class loginPage {
 
         if (isvalidCredentials(username, password)) {
             isAuthenticated = true;
-            System.out.println("Login successful!");
+            System.out.println("\nLogin successful!\n");
             return true;
         } else {
             loginAttempts++;
@@ -40,10 +42,11 @@ class loginPage {
         return username.equals("admin") && password.equals("password");
     }
 
-    private void logout() {
+    public void logout() {
         this.username = null;
         this.password = null;
         this.isAuthenticated = false;
+        System.out.println("\nSuccessfully logged out. Have a nice day!");
     }
 
 }
